@@ -83,7 +83,7 @@ string decrypted = clsUtil::DecryptText(encrypted, 3);
 
 ## License
 
-This library is open-source. You are free to use and modify it.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
