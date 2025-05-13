@@ -4,7 +4,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "../Date-library/Date.h"
+#include "clsDate.h"
 
 using namespace std;
 
@@ -36,43 +36,44 @@ public:
 
     static char GetRandomCharacter(enCharType CharType)
     {
-
         // updated this method to accept mixchars
         if (CharType == MixChars)
         {
-            // Capital/Samll/Digits only
+            // Capital/Small/Digits only
             CharType = (enCharType)RandomNumber(1, 3);
         }
 
         switch (CharType)
         {
-
         case enCharType::SamallLetter:
         {
-            return char(RandomNumber(97, 122));
+            return char(RandomNumber(97, 122)); // Small letter
             break;
         }
         case enCharType::CapitalLetter:
         {
-            return char(RandomNumber(65, 90));
+            return char(RandomNumber(65, 90)); // Capital letter
             break;
         }
         case enCharType::SpecialCharacter:
         {
-            return char(RandomNumber(33, 47));
+            return char(RandomNumber(33, 47)); // Special characters
             break;
         }
         case enCharType::Digit:
         {
-            return char(RandomNumber(48, 57));
+            return char(RandomNumber(48, 57)); // Digits
             break;
         }
-        defualt:
+        default: // Fixed typo here
         {
-            return char(RandomNumber(65, 90));
+            return char(RandomNumber(65, 90)); // Default to capital letter
             break;
         }
         }
+
+        // Add this to ensure function always returns a char, even if switch fails
+        return char(65); // This is just a fallback to avoid any warnings.
     }
 
     static string GenerateWord(enCharType CharType, short Length)

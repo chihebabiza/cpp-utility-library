@@ -1,7 +1,6 @@
 // MIT License
 // Copyright (c) 2025 Abiza Chiheb
 // See the LICENSE file for full details.
-#pragma once
 #include <iostream>
 #include "clsUtil.h"
 
@@ -104,7 +103,7 @@ int main()
     cout << "Text After Decryption  : ";
     cout << TextAfterDecryption << endl;
 
-    system("pause>0");
+    system("read -p '\nPress Enter to continue...'");
 
     return 0;
 }
